@@ -1,0 +1,23 @@
+{
+  "name": "carsalesdecor",
+  "version": "1.0.0",
+  "description": "This project allow to make practice the decorator design pattern. It is a system where we can buy many cars with simple click facilitated by SPA",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aab595/CarSalesDecor.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aab595/CarSalesDecor/issues"
+  },
+  "homepage": "https://github.com/aab595/CarSalesDecor#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
