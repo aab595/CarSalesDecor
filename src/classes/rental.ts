@@ -7,21 +7,13 @@ export enum CarType {
 }
 
 export class Rental implements IRental {
-    private _price: number;
+    constructor(private _type: CarType) { }
 
-    constructor(private _type: CarType) {
-        this._price = _type.valueOf()
+    getPrice(): number {
+        return this._type.valueOf()
     }
 
     setType(_newType: CarType) {
         this._type = _newType
-    }
-
-    getPrice(): number {
-        return this._price
-    }
-
-    setPrice(_newPrice: number) {
-        this._price = _newPrice
     }
 }
