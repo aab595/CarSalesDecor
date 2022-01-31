@@ -11,7 +11,7 @@ To finalize the order, he click to the button at the bottom of the page where th
 ---
 
 ## Preview 👇👇👇
-Click [here](www.google.com) to preview the app.
+Click [here](https://sale-cars-decor.herokuapp.com/) to preview the app.
 
 ---
 
