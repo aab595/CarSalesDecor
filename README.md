@@ -4,7 +4,7 @@ This project allow to make practice the decorator design pattern. It is a system
 ---
 
 ## How does it work ?
-The user have three type of cars to choose (it is just for experimentation  😇). He can choose many times the same car by using **plus** (`+`) and **plus** (`-`) button. After that, he click to `ADD` button to add the selected car.s in the **shooping cart**. It is the same process he will use for the next cars.
+The user have three type of cars to choose (it is just for experimentation  😇). He can choose many times the same car by using **plus** (`+`) button or decrease his choice with **minus** (`-`) button. After that, he click to `ADD` button to add the selected car.s in the **shooping cart**. It is the same process he will use for the next cars.
 
 To finalize the order, he click to the button at the bottom of the page where the label is **BUY THE SELECTED CARS**.
 
