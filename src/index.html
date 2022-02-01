@@ -22,13 +22,19 @@
                 <img src="https://www.belairdirect.com/blog/wp-content/uploads/2016/11/thumbs-type-berline-440x230.jpg"
                     alt="Berline">
                 <p class="car-title">Berline</p>
-                <div class="berline-driver-opt" title="Avec chauffeur">
+                <div class="berline-driver-opt">
                     <div>
                         <span class="iconify" data-icon="healthicons:truck-driver-outline"></span>
                     </div>
                     <form>
-                        <input type="radio" title="Avec chauffeur" name="berline-driver" id="berline-driver">
-                        <input type="radio" title="Sans chauffeur" name="berline-driver" id="berline-driver-x">
+                        <div class="driver">
+                            <input type="radio" name="berline-driver" class="inputRadio" id="berline-driver">
+                            <span class="l-tooltip">Avec chauffeur</span>
+                        </div>
+                        <div class="driverX">
+                            <input type="radio" name="berline-driver" class="inputRadioX" id="berline-driver-x">
+                            <span class="r-tooltip">Sans chauffeur</span>
+                        </div>
                     </form>
                 </div>
                 <div class="car-actions">
@@ -41,7 +47,7 @@
                     </button>
                 </div>
                 <div class="car-buy-btn">
-                    <span>$100</span>
+                    <span id="berline-price-view">$0</span>
                     <button class="btn" id="berline-rental"><span class="iconify"
                             data-icon="carbon:shopping-cart-plus"></span> Add</button>
                 </div>
@@ -71,7 +77,7 @@
                     </button>
                 </div>
                 <div class="car-buy-btn">
-                    <span>$150</span>
+                    <span id="coupe-price-view">$0</span>
                     <button class="btn" id="coupe-rental"><span class="iconify"
                             data-icon="carbon:shopping-cart-plus"></span> Add</button>
                 </div>
@@ -80,7 +86,7 @@
         <div class="cars-container">
             <div class="car">
                 <img src="https://www.belairdirect.com/blog/wp-content/uploads/2016/11/thumbs-type-familiale-440x230.jpg"
-                    alt="Berline">
+                    alt="Familiale">
                 <p class="car-title">Familiale</p>
                 <div class="familiale-driver-opt" title="Avec chauffeur">
                     <div>
@@ -101,7 +107,7 @@
                     </button>
                 </div>
                 <div class="car-buy-btn">
-                    <span>$200</span>
+                    <span id="familiale-price-view">$0</span>
                     <button class="btn" id="familiale-rental"><span class="iconify"
                             data-icon="carbon:shopping-cart-plus"></span> Add</button>
                 </div>

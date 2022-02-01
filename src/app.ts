@@ -5,28 +5,31 @@ import { RentalWithDriver } from "./classes/rentalWithDriver";
 const rental = new Rental(CarType.Berline)
 
 // DOM variables for Berline car
-const berlineBtnMinus = document.querySelector('#berline-minus') as HTMLButtonElement;
-const berlineBtnPlus  = document.querySelector('#berline-plus') as HTMLButtonElement;
-const berlineNb       = document.querySelector('#berline-nb') as HTMLSpanElement;
-const berlineRental   = document.querySelector('#berline-rental') as HTMLButtonElement;
-const berlineDriver   = document.querySelector('#berline-driver') as HTMLInputElement;
-const berlineDriverX  = document.querySelector('#berline-driver-x') as HTMLInputElement;
+const berlineBtnMinus    = document.querySelector('#berline-minus') as HTMLButtonElement;
+const berlineBtnPlus     = document.querySelector('#berline-plus') as HTMLButtonElement;
+const berlineNb          = document.querySelector('#berline-nb') as HTMLSpanElement;
+const berlineRental      = document.querySelector('#berline-rental') as HTMLButtonElement;
+const berlineDriver      = document.querySelector('#berline-driver') as HTMLInputElement;
+const berlineDriverX     = document.querySelector('#berline-driver-x') as HTMLInputElement;
+const berlinePriceViewer = document.querySelector('#berline-price-view') as HTMLSpanElement;
 
 // DOM variables for Coupe car
-const coupeBtnMinus = document.querySelector('#coupe-minus') as HTMLButtonElement;
-const coupeBtnPlus  = document.querySelector('#coupe-plus') as HTMLButtonElement;
-const coupeNb       = document.querySelector('#coupe-nb') as HTMLSpanElement;
-const coupeRental   = document.querySelector('#coupe-rental') as HTMLButtonElement;
-const coupeDriver   = document.querySelector('#coupe-driver') as HTMLInputElement;
-const coupeDriverX  = document.querySelector('#coupe-driver-x') as HTMLInputElement;
+const coupeBtnMinus    = document.querySelector('#coupe-minus') as HTMLButtonElement;
+const coupeBtnPlus     = document.querySelector('#coupe-plus') as HTMLButtonElement;
+const coupeNb          = document.querySelector('#coupe-nb') as HTMLSpanElement;
+const coupeRental      = document.querySelector('#coupe-rental') as HTMLButtonElement;
+const coupeDriver      = document.querySelector('#coupe-driver') as HTMLInputElement;
+const coupeDriverX     = document.querySelector('#coupe-driver-x') as HTMLInputElement;
+const coupePriceViewer = document.querySelector('#coupe-price-view') as HTMLSpanElement;
 
 // DOM variables for Familiale car
-const familialeBtnMinus = document.querySelector('#familiale-minus') as HTMLButtonElement;
-const familialeBtnPlus  = document.querySelector('#familiale-plus') as HTMLButtonElement;
-const familialeNb       = document.querySelector('#familiale-nb') as HTMLSpanElement;
-const familialeRental   = document.querySelector('#familiale-rental') as HTMLButtonElement;
-const familialeDriver   = document.querySelector('#familiale-driver') as HTMLInputElement;
-const familialeDriverX  = document.querySelector('#familiale-driver-x') as HTMLInputElement;
+const familialeBtnMinus    = document.querySelector('#familiale-minus') as HTMLButtonElement;
+const familialeBtnPlus     = document.querySelector('#familiale-plus') as HTMLButtonElement;
+const familialeNb          = document.querySelector('#familiale-nb') as HTMLSpanElement;
+const familialeRental      = document.querySelector('#familiale-rental') as HTMLButtonElement;
+const familialeDriver      = document.querySelector('#familiale-driver') as HTMLInputElement;
+const familialeDriverX     = document.querySelector('#familiale-driver-x') as HTMLInputElement;
+const familialePriceViewer = document.querySelector('#familiale-price-view') as HTMLSpanElement;
 
 const addCarBtn  = document.querySelector('#add-cars-btn') as HTMLButtonElement;
 const totalPrice = document.querySelector('#total-price') as HTMLSpanElement;
@@ -46,7 +49,6 @@ berlineBtnMinus.addEventListener('click', () => {
         berlineNb.innerText = countNbBerline.toString()
         rental.setType(CarType.Berline)
         priceCalculatorB -= rental.getPrice()
-        console.log(priceCalculatorB);
     }
 })
 // button allowing to increase the number of car
@@ -55,7 +57,6 @@ berlineBtnPlus.addEventListener('click', (e: Event) => {
     berlineNb.innerText = countNbBerline.toString()
     rental.setType(CarType.Berline)
     priceCalculatorB += rental.getPrice()
-    console.log(priceCalculatorB);
 })
 // button allowing to rent cars
 berlineRental.addEventListener('click', () => {
@@ -64,12 +65,14 @@ berlineRental.addEventListener('click', () => {
     if (countNbBerline > 0) {
         rental.setType(CarType.Berline)
         if (berlineDriver.checked) {
+            berlineDriver.className = "checked"
             const rentalWithDriver = new RentalWithDriver(rental)
             priceCalculatorB = rentalWithDriver.getPrice() * countNbBerline
         } else {
             priceCalculatorB = rental.getPrice() * countNbBerline
         }
         priceCalculator.berline = priceCalculatorB
+        berlinePriceViewer.innerText = `$${priceCalculatorB.toString()}`
     }
 })
 
@@ -80,7 +83,6 @@ coupeBtnMinus.addEventListener('click', (e: Event) => {
         coupeNb.innerText = countNbCoupe.toString()
         rental.setType(CarType.Coupé)
         priceCalculatorC -= rental.getPrice()
-        console.log(priceCalculatorC);
     }
 })
 // button allowing to increase the number of car
@@ -89,7 +91,6 @@ coupeBtnPlus.addEventListener('click', (e: Event) => {
     coupeNb.innerText = countNbCoupe.toString()
     rental.setType(CarType.Coupé)
     priceCalculatorC += rental.getPrice()
-    console.log(priceCalculatorC);
 })
 // button allowing to rent cars
 coupeRental.addEventListener('click', (e: Event) => {
@@ -103,6 +104,7 @@ coupeRental.addEventListener('click', (e: Event) => {
             priceCalculatorC = rental.getPrice() * countNbCoupe
         }
         priceCalculator.coupe = priceCalculatorC
+        coupePriceViewer.innerText = `$${priceCalculatorC.toString()}`
     }
 })
 
@@ -113,7 +115,6 @@ familialeBtnMinus.addEventListener('click', (e: Event) => {
         familialeNb.innerText = countNbFamiliale.toString()
         rental.setType(CarType.Familiale)
         priceCalculatorF -= rental.getPrice()
-        console.log(priceCalculatorF);
     }
 })
 // button allowing to increase the number of car
@@ -122,7 +123,6 @@ familialeBtnPlus.addEventListener('click', (e: Event) => {
     familialeNb.innerText = countNbFamiliale.toString()
     rental.setType(CarType.Familiale)
     priceCalculatorF += rental.getPrice()
-    console.log(priceCalculatorF);
 })
 // button allowing to rent cars
 familialeRental.addEventListener('click', (e: Event) => {
@@ -136,6 +136,7 @@ familialeRental.addEventListener('click', (e: Event) => {
             priceCalculatorF = rental.getPrice() * countNbFamiliale
         }
         priceCalculator.familiale = priceCalculatorF
+        familialePriceViewer.innerText = `$${priceCalculatorF.toString()}`
     }
 })
 

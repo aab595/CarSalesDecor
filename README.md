@@ -21,4 +21,4 @@ You can have look at the source code of this project by following these steps :
 1. Clone it or download the zip file
 2. Go to SaleCarsDecor directory using cd command line
 3. Install all dependencies with npm i command
-4. run the app with npm start
+4. run the app with npm run dev
