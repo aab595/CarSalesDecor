@@ -15,10 +15,18 @@ Click [here](https://sale-cars-decor.herokuapp.com/) to preview the app.
 
 ---
 
-## You can have look at the source code of this project
+## How to run it locally
 You can have look at the source code of this project by following these steps :
+```Bash
+# Clone this repository
+$ git clone https://github.com/aab595/SaleCarsDecor
 
-1. Clone it or download the zip file
-2. Go to SaleCarsDecor directory using cd command line
-3. Install all dependencies with npm i command
-4. run the app with npm run dev
+# Go SaleCarsDecor directory using cd command line
+$ cd SaleCarsDecor
+
+# Install all dependencies
+$ npm i
+
+# Run the app
+$ npm run dev
+```
