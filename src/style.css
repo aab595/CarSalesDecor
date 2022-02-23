@@ -78,6 +78,10 @@ body
     position: relative;
     width: 280px;
 }
+.car img:hover
+{
+    transform: scale(1.1);
+}
 .car .car-title
 {
     position: absolute;
